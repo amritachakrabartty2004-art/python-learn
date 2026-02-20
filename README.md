@@ -1,58 +1,37 @@
-# 🎓 Student CGPA Calculator Pro
+# 🎓 Student CGPA Calculator Pro (Vercel Ready)
 
-A premium, modern, and feature-rich CGPA calculator designed for students. This project offers two ways to interact: a high-end **Web-based UI** with real-time calculations and a robust **Command Line Interface (CLI)**.
+A premium, modern, and feature-rich CGPA calculator designed for students. This project is **fully optimized for Vercel deployment** with a high-end Web UI and a robust Python Command Line Interface.
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)
-![Web](https://img.shields.io/badge/Interface-Web%20%26%20CLI-purple?style=for-the-badge)
+![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge&logo=vercel)
 ![UI](https://img.shields.io/badge/Design-Glassmorphism-pink?style=for-the-badge)
 
 ---
 
 ## 🌟 Key Features
 
-### 1. 🚀 Premium Web UI (Recommended)
+### 1. 🚀 Premium Web UI (Vercel Optimized)
 - **Glassmorphic Design**: Modern, sleek interface with blur effects and vibrant gradients.
 - **Real-time Calculation**: CGPA and Percentage update instantly as you type.
-- **Dynamic Management**: Add/Remove multiple semesters and subjects fluidly.
-- **Visual Status**: Instant pass/fail indicators and backlog tracking.
+- **Responsive**: Works perfectly on mobile and desktop.
+- **Export Feature**: Generate and save a structured `.txt` report directly from the browser.
 
-### 2. 💻 Terminal/CLI Version
-- Pure Python implementation.
-- Perfect for quick calculations and understanding the logic.
-- Robust input validation.
-
-### 3. 📝 Reporting & Detection
-- **Backlog Detection**: Automatically identifies and lists subjects with 'F' grades.
-- **Precise Conversion**: Uses the standard formula: `Percentage = CGPA × 9.5`.
-- **Export Feature**: Generate and save a structured `.txt` report of your performance.
+### 2. 💻 Python CLI Version
+- Pure Python implementation included for terminal use.
+- Robust input validation and backlog detection module.
 
 ---
 
-## 📊 Grade Mapping Logic
+## 🚀 Deployment & Usage
 
-| Grade | Description | Point Value |
-|-------|-------------|-------------|
-| **O** | Outstanding | 10 |
-| **A+**| Excellent   | 9  |
-| **A** | Very Good   | 8  |
-| **B+**| Good        | 7  |
-| **B** | Above Avg   | 6  |
-| **C** | Average     | 5  |
-| **F** | Fail        | 0  |
+### 🌎 Deploy to Vercel (Live Web App)
+1. Push this project to your GitHub repository.
+2. Go to **[Vercel.com](https://vercel.com)**.
+3. Click "New Project" and import your repository.
+4. Click **Deploy**. Vercel will automatically detect `index.html` and your site will be LIVE!
 
----
-
-## 🚀 How to Run
-
-### Option A: Launch the Web UI (The Best Experience)
-Navigate to the project folder and run:
-```powershell
-py .\cgpa_app\run_app.py
-```
-*Wait for your browser to open automatically, or go to `http://localhost:8000`.*
-
-### Option B: Run the Terminal Version
-For a classic command-line experience:
+### 💻 Run Locally (CLI Version)
+For the command-line experience:
 ```powershell
 py .\student_cgpa_calculator.py
 ```
@@ -62,14 +41,23 @@ py .\student_cgpa_calculator.py
 ## 🛠️ Project Structure
 
 ```text
-├── student_cgpa_calculator.py  # Core CLI Python Program
-├── cgpa_app/
-│   ├── index.html              # Modern Web UI structure
-│   ├── style.css               # Premium Glassmorphism styling
-│   ├── script.js               # Real-time calculation logic
-│   └── run_app.py              # Local server launcher
+├── index.html                  # Main Web UI (Root for Vercel)
+├── style.css                   # Premium Glassmorphism styling
+├── script.js                   # Real-time calculation logic
+├── student_cgpa_calculator.py  # Python CLI Version
 └── README.md                   # Project documentation
 ```
+
+---
+
+## 📊 Grade Mapping Logic
+Uses standard 10-point scale (O=10, A+=9, ..., F=0).
+Formula: $CGPA = \frac{\sum(\text{Credit} \times \text{GradePoint})}{\sum(\text{Credits})}$
+Percentage: $CGPA \times 9.5$
+
+---
+
+Developed for Student Excellence.
 
 ---
 
