@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Student CGPA Calculator</title>
+    <meta name="description" content="A modern, glassmorphic CGPA calculator for B.Tech students. Calculate semester and cumulative CGPA with percentage conversion and backlog detection.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="app-container">
+        <header class="app-header">
+            <h1>CGPA <span class="gradient-text">Calculator</span></h1>
+            <p>Calculate your academic performance with a modern touch.</p>
+        </header>
+
+        <div class="dashboard-grid">
+            <!-- Input Section -->
+            <section class="card glass-card input-section">
+                <div class="card-header">
+                    <h2>Add Semester</h2>
+                    <button id="add-semester-btn" class="btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        Add Semester
+                    </button>
+                </div>
+                
+                <div id="semesters-container">
+                    <!-- Semesters will be injected here -->
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="card glass-card results-section">
+                <h2>Total Summary</h2>
+                <div class="overall-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Cumulative CGPA</span>
+                        <div class="stat-value-container">
+                            <span id="total-cgpa" class="stat-value">0.00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="stats-grid">
+                        <div class="mini-stat">
+                            <span class="mini-label">Credits</span>
+                            <span id="total-credits" class="mini-value">0</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-label">Percentage</span>
+                            <span id="total-percentage" class="mini-value">0%</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-label">Status</span>
+                            <span id="final-status" class="mini-value status-pass">PASS</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-label">Backlogs</span>
+                            <span id="final-backlogs" class="mini-value">None</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button id="export-btn" class="btn-secondary">Export to Report</button>
+                    <button id="reset-btn" class="btn-ghost">Reset All</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Templates -->
+    <template id="semester-template">
+        <div class="semester-wrapper animate-in">
+            <div class="semester-header">
+                <h3>Semester <span class="sem-num">1</span></h3>
+                <button class="btn-icon delete-sem-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
+            </div>
+            <div class="subjects-list">
+                <!-- Subjects injected here -->
+            </div>
+            <button class="btn-add-subject">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                Add Subject
+            </button>
+            <div class="semester-summary">
+                <span>Semester CGPA: <strong class="sem-cgpa-val">0.00</strong></span>
+            </div>
+        </div>
+    </template>
+
+    <template id="subject-template">
+        <div class="subject-row">
+            <input type="text" placeholder="Subject Name" class="input-subject-name">
+            <input type="number" placeholder="Credits" class="input-credits" min="0" step="0.5">
+            <select class="input-grade">
+                <option value="" disabled selected>Grade</option>
+                <option value="10">O (10)</option>
+                <option value="9">A+ (9)</option>
+                <option value="8">A (8)</option>
+                <option value="7">B+ (7)</option>
+                <option value="6">B (6)</option>
+                <option value="5">C (5)</option>
+                <option value="0">F (0)</option>
+            </select>
+            <button class="btn-icon-sm delete-subject-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>
